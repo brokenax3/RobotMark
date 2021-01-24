@@ -4,8 +4,12 @@ from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 from os import listdir
 from rss_feed import get_news, get_anime
 from updater import updater
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot("API_KEY_FML", parse_mode=None)
+# Loading the environmental variables
+load_dotenv()
+
+bot = telebot.TeleBot(API_KEY, parse_mode=None)
 note_folder = "notes/"
 news_source = ["news.com.au", "abc.net.au", "thestar.com.my", "bbc.com"]
 chat_id = "974308491"

@@ -1,0 +1,3 @@
+# Git Ignore for Robot Mark
+.env
+__pycache__
