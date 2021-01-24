@@ -10,7 +10,7 @@ news_feed_list = ["https://www.news.com.au/content-feeds/latest-news-national/",
 # Passing RSS Feed from reputable news outlets
 def get_news(index, source):
     news_feed = feedparser.parse(news_feed_list[index])
-    news_text = "{} \- Source : {} \n".format(datetime.datetime.now().strftime("%d/%m/%y"), re.escape(source))
+    news_text = "{} \- Source : {} \n\n".format(datetime.datetime.now().strftime("%d/%m/%y"), re.escape(source))
 
     # Formating News Articles with Markdown Format
     for item in news_feed.entries[:10]:
