@@ -101,16 +101,17 @@ def final_handler(message):
 
     bot.send_message(chat_id, "I'm not sure I understand what you're saying.")
 
-# Does this do something when no message is sent?
-@bot.message_handler(func=lambda message: False)
-def wait_send_time():
-    if(datetime.datetime.now().minute == 19):
-
-        bot.send_message(chat_id, "It is the 19th second now!")
-
 # Simple check to verify owner before code execution
 def check_user(msg):
     # Always check if the excecution was by the owner
     return 1 if str(msg.from_user.id) == chat_id else 0
 
 bot.polling()
+
+
+while True:
+    if(datetime.datetime.now().minute == 19):
+
+        bot.send_message(chat_id, "It is the 30th minute now!")
+
+
