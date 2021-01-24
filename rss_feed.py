@@ -5,7 +5,8 @@ import datetime
 news_feed_list = ["https://www.news.com.au/content-feeds/latest-news-national/", \
                   "http://www.abc.net.au/news/feed/2942460/rss.xml", \
                   "https://www.thestar.com.my/rss/News", \
-                  "http://feeds.bbci.co.uk/news/world/rss.xml"]
+                  "http://feeds.bbci.co.uk/news/world/rss.xml", \
+                  "https://www.reddit.com/r/news/.rss"]
 
 # Passing RSS Feed from reputable news outlets
 def get_news(index, source):

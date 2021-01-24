@@ -12,7 +12,7 @@ load_dotenv()
 # Setup the bot and several important variables
 bot = telebot.TeleBot(getenv("API_KEY"), parse_mode=None)
 note_folder = "notes/"
-news_source = ["news.com.au", "abc.net.au", "thestar.com.my", "bbc.com"]
+news_source = ["news.com.au", "abc.net.au", "thestar.com.my", "bbc.com", "r/news"]
 chat_id = getenv("CHAT_ID")
 version_id ="0.0.6_alpha"
 
