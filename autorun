@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while true; do
+    echo "Started Robot Mark."
+    python3 test_bot.py
+    echo "Robot Mark Stopped."
+
+    sleep 1
+done
