@@ -8,6 +8,7 @@ def scan_devices():
     test = subprocess.check_output(["./scan_network.sh"])
     lines = test.decode('UTF-8').splitlines()
     message = ""
+    devices_full = []
 
     [devices_full.append(line.replace("MAC Address: ", "")) for line in lines]
     for device in devices_full:
