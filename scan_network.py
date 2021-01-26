@@ -9,10 +9,13 @@ def scan_devices():
     filename = "devices.txt"
     stored_devices = []
     new_devices = []
+    devices_full = []
     message = ""
 
     # Store scanned devices into new array
-    [new_devices.append(line.replace("MAC Address: ","").split()[0]) for line in lines]
+    [new_devices.append(line.replace("MAC Address: ", "").split()[0]) for line in lines]
+    [devices_full.append(line.replace("MAC Address: ", "").split()[0]) for line in lines]
+
 
     # Access devices.txt to check if the device was previously connected
     if os.path.isfile(filename) == 1:
@@ -25,7 +28,7 @@ def scan_devices():
         # Contructing the message to send to the bot
         for device in new_devices:
             if device not in stored_devices:
-                message += lines[new_devices.index(device)] + "\n"
+                message += devices_full[new_devices.index(device)] + "\n"
     else:
         
         [print(item) for item in new_devices]
