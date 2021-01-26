@@ -25,7 +25,7 @@ def scan_devices():
         # Contructing the message to send to the bot
         for device in new_devices:
             if device not in stored_devices:
-                message += lines[device.index()] + "\n"
+                message += lines[new_devices.index(device)] + "\n"
     else:
         
         [print(item) for item in new_devices]
