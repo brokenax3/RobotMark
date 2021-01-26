@@ -75,10 +75,10 @@ def send_connected_devices(message):
     devices = scan_devices()
     if devices != "":
 
-        bot.reply_to(message, "New Devices found on network since last scan: \n" + devices, parse_mode="MarkdownV2")
+        bot.reply_to(message, "Devices found on network: \n" + devices)
     else:
 
-        bot.reply_to(message, "No new devices found on network since last scan.")
+        bot.reply_to(message, "No devices found on network.")
 
 # Section WIP
 # Note method still undecided
