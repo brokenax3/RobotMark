@@ -8,8 +8,3 @@ def updater():
 
     return status[0].flags
 
-
-
-
-
-

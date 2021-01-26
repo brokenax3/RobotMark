@@ -5,6 +5,7 @@ from os import listdir, getenv
 from rss_feed import get_news, get_anime
 from updater import updater
 from dotenv import load_dotenv
+from scan_network import scan_devices
 
 # Loading the environmental variables
 load_dotenv()
@@ -68,6 +69,16 @@ def send_news(message):
     if not check_user(message): return
 
     bot.reply_to(message, get_anime(), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=['ctd_devices'])
+def send_connected_devices(message):
+    devices = scan_devices()
+    if devices != "":
+
+        bot.reply_to(message, "New Devices found on network since last scan: \n" + devices, parse_mode="MarkdownV2")
+    else:
+
+        bot.reply_to(message, "No new devices found on network since last scan.", parse_mode="MarkdownV2")
 
 # Section WIP
 # Note method still undecided

@@ -1,0 +1,3 @@
+B8:27:EB:37:82:0E (Raspberry Pi Foundation)
+82:ED:87:06:C2:A5 (Unknown)
+D0:6E:DE:19:2F:C6 (Sagemcom Broadband SAS)
