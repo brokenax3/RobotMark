@@ -2,8 +2,7 @@ import feedparser
 import re
 import datetime
 
-news_feed_list = ["https://www.news.com.au/content-feeds/latest-news-national/", \
-                  "http://www.abc.net.au/news/feed/2942460/rss.xml", \
+news_feed_list = ["http://www.abc.net.au/news/feed/2942460/rss.xml", \
                   "https://www.thestar.com.my/rss/News", \
                   "http://feeds.bbci.co.uk/news/world/rss.xml", \
                   "https://www.reddit.com/r/news/.rss"]
@@ -24,7 +23,7 @@ def get_news(index, source):
 # Getting Anime released on that day from https://www.livechart.me/schedule/tv
 def get_anime():
     anime_feed = feedparser.parse("https://www.livechart.me/feeds/episodes")
-    anime_text = "**" + datetime.datetime.now().strftime("%d/%m/%y") + "** \n"
+    anime_text = "**" + datetime.datetime.now().strftime("%d/%m/%y") + "** \n\n"
 
     for item in anime_feed.entries:
         if item.published_parsed.tm_mday is datetime.datetime.utcnow().day or datetime.datetime.utcnow().day - 1:

@@ -1,6 +1,5 @@
 import telebot
 import re
-import datetime
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 from os import listdir, getenv
 from rss_feed import get_news, get_anime
@@ -13,7 +12,7 @@ load_dotenv()
 # Setup the bot and several important variables
 bot = telebot.TeleBot(getenv("API_KEY"), parse_mode=None)
 note_folder = "notes/"
-news_source = ["news.com.au", "abc.net.au", "thestar.com.my", "bbc.com", "r/news"]
+news_source = ["abc.net.au", "thestar.com.my", "bbc.com", "r/news"]
 chat_id = getenv("CHAT_ID")
 version_id ="0.0.6_alpha"
 
@@ -107,11 +106,3 @@ def check_user(msg):
     return 1 if str(msg.from_user.id) == chat_id else 0
 
 bot.polling()
-
-
-while True:
-    if(datetime.datetime.now().minute == 19):
-
-        bot.send_message(chat_id, "It is the 30th minute now!")
-
-
