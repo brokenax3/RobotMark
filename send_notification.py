@@ -13,34 +13,19 @@ logging.basicConfig(level=logging.DEBUG,
 
 logger = logging.getLogger(__name__)
 
-def checkUsername(username):
+def checkUsername(username) -> bool:
 
     if username.username == "markkmarkmark" and username.id == "974308491":
         return True
     else:
         return False
 
-
-def start(update: Update, context: CallbackContext) -> None:
-    user = update.effective_user 
-
-    if not checkUsername(user): return
-
-    update.message.reply_markdown_v2(
-        fr'Hello {user.mention_markdown_v2()}\!',
-        reply_markup=ForceReply(selective=True),
-    )
-
 def main():
     updater = Updater(config["TOKEN"])
 
     dispatcher = updater.dispatcher
 
-    dispatcher.add_handler(CommandHandler("start", start))
 
-    updater.start_polling()
-
-    updater.idle()
 
 if __name__ == '__main__':
     main()

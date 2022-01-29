@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 schedule_message.py & 
+# python3 schedule_message.py & 
 
 while true; do
     echo "Started Robot Mark."
